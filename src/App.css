@@ -3,6 +3,11 @@ body {
 
 }
 
+.app-main {
+  
+  height: 100vh;
+}
+
 .App {
   align-items: center; 
   display: flex; 
@@ -26,16 +31,29 @@ body {
 
 .App-header {
   /* font-size: calc(10px + 2vmin); */
-  padding: 20px 20px;
+  padding: 10px 10px;
   font-size: 30px;
   color: aliceblue;
   text-shadow: gray 2px 5px 5px ;
-  letter-spacing: 5px;
+  /* text-decoration: underline rgba(255, 4, 4, 0.911); */
+  letter-spacing: 4px;
+  border-bottom: solid rgba(255, 4, 4, 0.911);
+  
 
 }
 .o {
   color: rgba(255, 4, 4, 0.911);
 
+}
+.status-h1 {
+  text-align: center;
+  color: aliceblue;
+  letter-spacing: 10px;
+  text-shadow: gray 2px 5px 5px;
+  width: max-content;
+  margin: 100px auto 100px auto;
+  /* text-decoration: underline rgba(255, 4, 4, 0.911); */
+  border-bottom: solid rgba(255, 4, 4, 0.911);
 }
 
 .status {
@@ -43,25 +61,27 @@ body {
   display: flex;
   justify-content: space-around;
   text-align: justify;
+  /* margin-top: 100px; */
 }
 
 .status1 {
   
-  background-color: rgba(122, 120, 120, 0.096) ;
+  background-color: rgba(92, 88, 88, 0.623) ;
   color: aliceblue;
   padding: 0px 10px 0px 10px;
   width: max-content;
+  /* justify-content: space-evenly; */
   border: none ;
   border-radius: 10px;
   box-shadow: gray 0px 0px 10px 5px;
-  margin: auto;
+  margin-top: 50px;
 }
 
 .chart {
 
   /* justify-content: center; */
   font-size: 30px;
-  background-color: aliceblue;
+  background-color: silver;
   height: 400px;
   width: 90%;
   margin: 50px auto;

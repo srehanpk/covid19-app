@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Bar, Line, Pie } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 
 
 const Chart = () => {
@@ -14,13 +14,16 @@ const Chart = () => {
         
         setData({
 
-            labels: ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"],
+            labels: ["Total Confirmed Cases",
+                     "Total Recovered", 
+                     "Total Deaths"],
             
             datasets: [{
-                labels:"Covid-19",
-                data: [38, 58, 68, 78, 90, 95],
-                backgroundColor: ['pink', 'pink', 'pink', 'pink', 'pink', 'pink',],
-                borderWidth: 2
+                label:"Covid-19 ",
+                data: [950, 360, 250],
+                backgroundColor: ['rgba(169, 69, 182)', 'rgba(169, 69, 182)', 'rgba(169, 69, 182)'],
+                borderWidth: 2 
+                
             }]
         })
     }
@@ -47,12 +50,16 @@ const Chart = () => {
 
 <Bar
   data={cases}
-//   width={100}
-//   height={100}
+  width={100}
+  height={100}
   options={{ 
       maintainAspectRatio: false, 
     responsive: true, 
-    title: {text: "Global Situation", display: true}  }}
+    title: {text: "Global Situation",
+            display: true, 
+            fontSize:20, 
+            fontColor: "rgba(169, 69, 182)"
+            }  }}
 />
 
 

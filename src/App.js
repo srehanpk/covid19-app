@@ -8,15 +8,18 @@ import Chart from './Chart';
 function App() {
   return (
     <> 
+    <div className="app-main">
+
     <div className="App">
       <h1 className="App-header">
         C<span className="o">o</span>vid-19 Tracker 
       </h1>
-
       <List />
-      
-      </div>
+    </div>
+
       <Status />
+
+    </div>
       <Chart />
       </>
   );

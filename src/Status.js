@@ -6,30 +6,31 @@ const Status = () => {
 
     return (
 
+        <>
+        <h1 className="status-h1">Country</h1>
         <div className="status">
         
 
-
         <div className="status1">
-        <h4>Status  1</h4>
+        <h4>New Cases</h4>
         </div>
         
         <div className="status1">
-        <h4>Status 2</h4>
+        <h4>Total Cases</h4>
         </div>
         
         <div className="status1">
-        <h4>Status 3</h4>
+        <h4>Total Recovered</h4>
         </div>
 
         <div className="status1">
-        <h4>Status 4</h4>
+        <h4>Total Deaths</h4>
         </div>
 
 
         
         </div>
-        
+        </>
                 
  )   
 }
