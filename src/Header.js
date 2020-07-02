@@ -21,7 +21,7 @@ function Header() {
       
       </h1>
       
-      <span className="stay">Stay Home <span role="img">🏠</span> Stay Safe <span role="img">😷</span> </span>
+      <span className="stay">Stay Home Stay Safe </span>
       </div>    
         
      </>
