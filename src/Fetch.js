@@ -9,10 +9,10 @@ export default function Fetch() {
 
     const incData = "Loading.....";
     let [data, setData] = useState(incData);
-    let [country, setCountry] = useState(incData);
+    
 
-      console.log(data);
-      console.log(country);
+      // console.log(data);
+      // console.log(country);
 
     
     

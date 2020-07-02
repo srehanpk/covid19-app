@@ -2,22 +2,29 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import {Grid, Card, CardContent, Typography} from '@material-ui/core';
+import ReportIcon from '@material-ui/icons/Report';
+import FiberNewIcon from '@material-ui/icons/FiberNew';
+import HealingIcon from '@material-ui/icons/Healing';
+import WarningIcon from '@material-ui/icons/Warning';
 import CountUp from 'react-countup';
+import List from './List';
 
 
 
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+root: {
      flexGrow: 1, 
     },
-    paper: {
+
+paper: {
     display: "flex",
     justifyContent:"center",
     // padding: theme.spacing(2),
     color: theme.palette.text.secondary,
     backgroundColor: "transparent",  
 },
+
 h4: {
     textAlign: 'center',
     fontSize: 30,
@@ -52,6 +59,10 @@ export default function Status() {
     <div className={classes.root}>
 
     <h4 className={classes.h4}>Global Status</h4>
+    <List />
+
+    
+
       <Grid container spacing={10} justify="center">
         <Grid item  xs={2.5} md={3}>
 
@@ -59,6 +70,7 @@ export default function Status() {
 
           <Card className={classes.card} style={{borderTop: "solid 10px orange"}}>
           <CardContent>
+          <ReportIcon style={{color: "orange", fontSize: "30px"}}/>
             <Typography className={classes.title} style={{color:"orange"}} color="textSecondary" gutterBottom>
               <b>Confirmed Cases</b>
             </Typography>
@@ -79,6 +91,7 @@ export default function Status() {
 
           <Card className={classes.card} style={{borderTop: "solid 10px blue"}}>
       <CardContent>
+      <FiberNewIcon style={{color: "blue", fontSize: "30px"}}/>
         <Typography className={classes.title} style={{color:"blue"}} color="textSecondary" gutterBottom>
           <b>New Reported </b>
         </Typography>
@@ -99,6 +112,7 @@ export default function Status() {
 
           <Card className={classes.card} style={{borderTop: "solid 10px green"}}>
       <CardContent>
+      <HealingIcon style={{color: "green", fontSize: "30px"}}/>
         <Typography className={classes.title} style={{color:"green"}} color="textSecondary" gutterBottom>
           <b>Recovered Cases</b>
         </Typography>
@@ -119,6 +133,7 @@ export default function Status() {
 
           <Card className={classes.card} style={{borderTop: "solid 10px red"}}>
           <CardContent>
+          <WarningIcon style={{color: "red", fontSize: "30px"}}/>
             <Typography className={classes.title} style={{color:"red"}} color="textSecondary" gutterBottom>
               <b>Total Deaths</b>
             </Typography>

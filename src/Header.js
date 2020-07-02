@@ -5,7 +5,6 @@ import './App.css';
 
 
 
-
 function Header() {
   return (
     <> 
@@ -21,7 +20,6 @@ function Header() {
       
       </h1>
       
-      <span className="stay">Stay Home Stay Safe </span>
       </div>    
         
      </>
