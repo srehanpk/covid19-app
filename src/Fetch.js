@@ -4,49 +4,47 @@ import axios from 'axios';
 
 
 
-function Axi() {
+export default function Fetch() {
 
 
     const incData = "Loading.....";
     let [data, setData] = useState(incData);
+    let [country, setCountry] = useState(incData);
 
-    //console.log(data);
-    let cases = data; 
-
-    console.log(cases);
+      console.log(data);
+      console.log(country);
 
     
-    useEffect( () => {
+    
         
-        async function covid ()  {
+         async function covid ()  {
             
             const response = await axios.get(`https://api.covid19api.com/summary`);
-            
             console.log(response);
             
-            let value =await response.data;
-            let newValue =await value.Countries[126];
+            const value =await response.data//[0].Country;
+             //console.log(value);
             
-            setData(newValue);
+             
+             const countryName = await value.Countries.map(values => {
+                 return values.Country; });
+                
+                  //console.log(countryName);
+                setData(value);
+                setCountry(countryName);
         }
-        covid();
-    }, [setData]);
+        // covid();
+  
     
 
  
     return (
+
+    <div>
+    <h1>hello </h1>     
+    </div>
         
 
 
         
-        <div>
-            <h5 >Status: {cases=== incData ?  incData : "Complete"}</h5>
-        <h2>Country:  {cases.Country}  </h2>
-        <h2>Total Cases: {cases.TotalConfirmed}</h2>
-        <h2>Total Recovered: {cases.TotalRecovered} </h2>
-        <h2>Total Deaths: {cases.TotalDeaths} </h2>
-        
-        </div>
     )}
-
-export default Axi;

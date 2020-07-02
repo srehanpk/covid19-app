@@ -1,22 +1,32 @@
 body {
   background-color: #282c34;
 
-}
-
-.app-main {
+  /* background-color: dimgrey; */
   
-  height: 100vh;
 }
 
-.App {
-  align-items: center; 
-  display: flex; 
+.header-div {
+  
+  height: 80px;
+  border-bottom: solid rgba(255, 4, 4, 0.911);
+  display: flex;
   justify-content: space-between;
-  
-  
+  padding: 0px 20px 0px 20px ;
+}
+.header {
+ font-size:40px;
+ color: aliceblue;
+ text-shadow: black 2px 5px 1px ;
+ letter-spacing: 4px;
+}
+.stay {
+  font-size: 20px;
+  color: aliceblue;
+  text-shadow: black 2px 5px 1px ;
+  letter-spacing: 2px;
+  margin-top: 45px;
  
 }
-
 .list {
 
   color: aliceblue;
@@ -31,65 +41,42 @@ body {
 }
 
 
-.App-header {
-  /* font-size: calc(10px + 2vmin); */
-  padding: 10px 10px;
-  font-size: 30px;
-  color: aliceblue;
-  text-shadow: gray 2px 5px 5px ;
-  /* text-decoration: underline rgba(255, 4, 4, 0.911); */
-  letter-spacing: 4px;
-  border-bottom: solid rgba(255, 4, 4, 0.911);
-  
-
-}
 .o {
   color: rgba(255, 4, 4, 0.911);
 
-}
-.status-h1 {
-  text-align: center;
-  color: aliceblue;
-  letter-spacing: 10px;
-  text-shadow: gray 2px 5px 5px;
-  width: max-content;
-  margin: 100px auto 100px auto;
-  /* text-decoration: underline rgba(255, 4, 4, 0.911); */
-  border-bottom: solid rgba(255, 4, 4, 0.911);
-  
 }
 
 .status {
 
   display: flex;
   justify-content: space-around;
-  text-align: justify;
-  /* margin-top: 100px; */
+  text-align: center;
+  
+  
  
 }
 
-.status1 {
-  
-  background-color: rgba(92, 88, 88, 0.623) ;
-  color: aliceblue;
-  padding: 0px 10px 0px 10px;
-  width: max-content;
-  /* justify-content: space-evenly; */
-  border: none ;
-  border-radius: 10px;
-  box-shadow: gray 0px 0px 10px 5px;
-  margin-top: 50px;
-}
 
-.chart {
+.line {
+
+  
+  font-size: 20px;
+  height: 400px;
+  width: 90vw;
+  margin:  auto;
+  
+}
+.doughnut {
 
   justify-content: center;
-  font-size: 30px;
+  font-size: 20px;
   background-color: transparent;
-  height: 300px;
-  width: max-content;
-  /* margin: 50px auto; */
-  border-radius: 20px;
+  height: 400px;
+  /* width: max-content; */
+  margin: auto;
+  
 }
-
+.chart {
+   
+}
 
