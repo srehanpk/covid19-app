@@ -14,6 +14,11 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "aliceblue",
     
   },
+  h3: {
+    color: "aliceblue",
+    textShadow: "black 2px 5px 1px", 
+    letterSpacing: 4,
+  },
 }));
 
 export default function List() {
@@ -35,7 +40,7 @@ export default function List() {
 
   return (
     <div className="select">
-    <h3 className="country">Select Country</h3>
+    <h3 className={classes.h3}>Select Country</h3>
       <FormControl className={classes.formControl}>
         <InputLabel id="demo-controlled-open-select-label"></InputLabel>
         <Select
