@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './Header';
 import Status from './Status';
+import { GlobalProvider } from "./Context.js";
 
 
 
@@ -9,12 +10,12 @@ import Status from './Status';
 
 function App() {
   return (
-    <> 
+    
+    <GlobalProvider>
         <Header />
         <Status />
-        
+    </GlobalProvider>
     
-    </>
 
     );
   }

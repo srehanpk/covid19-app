@@ -1,50 +1,36 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import axios from 'axios';
 
 
 
 
-export default function Fetch() {
+  export const Fetch = () =>{
 
 
-    const incData = "Loading.....";
-    let [data, setData] = useState(incData);
+  const [globalData, setGlobalData] = useState({});
+  //const [countries, setCountries] = useState();
+
+  //console.log(global);
+
+  useEffect(()=> {
     
-
-      // console.log(data);
-      // console.log(country);
-
+      
+      async function covid ()  {
     
-    
+        const {data: {confirmed, recovered, deaths}} = await axios.get(`https://covid19.mathdro.id/api`);
+        const data =  {confirmed:confirmed.value, recovered:recovered.value, deaths:deaths.value}
+        console.log(data);
+        setGlobalData(data);
         
-         async function covid ()  {
-            
-            const response = await axios.get(`https://api.covid19api.com/summary`);
-            console.log(response);
-            
-            const value =await response.data//[0].Country;
-             //console.log(value);
-            
-             
-             const countryName = await value.Countries.map(values => {
-                 return values.Country; });
-                
-                  //console.log(countryName);
-                setData(value);
-                setCountry(countryName);
-        }
-        // covid();
-  
-    
+      }
+           
+      covid();
+      
+    },[setGlobalData]);
 
- 
-    return (
+//console.log(globalData.confirmed);
 
-    <div>
-    <h1>hello </h1>     
-    </div>
+    return {globalData};
         
 
-
-        
-    )}
+  }

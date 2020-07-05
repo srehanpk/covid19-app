@@ -1,56 +1,64 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import  './App.css';
+import React, { useState, useContext } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+import "./App.css";
+import { GlobalContext } from "./Context";
+
+
+
+
+
 
 const useStyles = makeStyles((theme) => ({
- 
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 120,
+    minWidth: 150,
     backgroundColor: "aliceblue",
-    
   },
   h3: {
     color: "aliceblue",
-    textShadow: "black 2px 5px 1px", 
+    textShadow: "black 2px 5px 1px",
     letterSpacing: 4,
   },
 }));
 
-export default function List() {
+
+
+
+
+
+export default  function List() {
+
   const classes = useStyles();
-  const [age, setAge] = React.useState('');
-  const [open, setOpen] = React.useState(false);
+  
+  const {globalData}  = useContext(GlobalContext);
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
+ console.log(globalData);
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const [country, setCountry] = React.useState("");
+ 
 
-  const handleOpen = () => {
-    setOpen(true);
+
+
+
+
+
+
+  const change = (event) => {
+    setCountry(event.target.value);
   };
 
   return (
     <div className="select">
-    <h3 className={classes.h3}>Select Country</h3>
+      <h3 className={classes.h3}>Select Country</h3>
       <FormControl className={classes.formControl}>
-        <InputLabel id="demo-controlled-open-select-label"></InputLabel>
         <Select
           labelId="demo-controlled-open-select-label"
           id="demo-controlled-open-select"
-          open={open}
-          onClose={handleClose}
-          onOpen={handleOpen}
-          value={age}
-          onChange={handleChange}
+          value={country}
+          onChange={change}
         >
           <MenuItem value="">
             <em>None</em>

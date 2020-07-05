@@ -32,32 +32,12 @@ body {
   letter-spacing: 4px;
 }
 
-.select-box {
-
-  width: 100px;
-  background-color: aliceblue;
-}
-
-
 .o {
   color: rgba(255, 4, 4, 0.911);
 
 }
-
-.status {
-
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
-  
-  
- 
-}
-
-
 .line {
 
-  
   font-size: 20px;
   height: 400px;
   width: 90vw;
@@ -74,7 +54,5 @@ body {
   margin: auto;
   
 }
-.chart {
-   
-}
+
 
