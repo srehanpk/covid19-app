@@ -18,13 +18,14 @@ import { GlobalContext } from "./Context";
 const useStyles = makeStyles((theme) => ({
 root: {
      flexGrow: 1, 
+     marginTop: 100,
     },
 
 paper: {
     display: "flex",
     justifyContent:"center",
     // padding: theme.spacing(2),
-    color: theme.palette.text.secondary,
+    //color: theme.palette.text.secondary,
     backgroundColor: "transparent",  
 },
 
@@ -133,8 +134,8 @@ export default function Status() {
 
     
       
-      <Grid container spacing={10} justify="center">
-        <Grid item  xs={2.5} md={3}>
+      <Grid container spacing={4} justify="center">
+        <Grid item  xs={10} md={3}>
 
           <Paper className={classes.paper}>
 
@@ -156,7 +157,7 @@ export default function Status() {
     
 
 
-        <Grid item  xs={2.5} md={3}>
+        <Grid item  xs={10} md={3}>
 
           <Paper className={classes.paper}>
 
@@ -178,7 +179,7 @@ export default function Status() {
       
 
       
-        <Grid item  xs={2.5} md={3}>
+        <Grid item  xs={10} md={3}>
 
           <Paper className={classes.paper}>
 
