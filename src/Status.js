@@ -134,7 +134,7 @@ export default function Status() {
     
       
       <Grid container spacing={10} justify="center">
-        <Grid item  xs={3} md={3}>
+        <Grid item  xs={2.5} md={3}>
 
           <Paper className={classes.paper}>
 
@@ -156,7 +156,7 @@ export default function Status() {
     
 
 
-        <Grid item  xs={3} md={3}>
+        <Grid item  xs={2.5} md={3}>
 
           <Paper className={classes.paper}>
 
@@ -178,7 +178,7 @@ export default function Status() {
       
 
       
-        <Grid item  xs={3} md={3}>
+        <Grid item  xs={2.5} md={3}>
 
           <Paper className={classes.paper}>
 
