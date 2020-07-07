@@ -35,8 +35,12 @@ body {
 }
 .chart {
 
-  background-color: aliceblue;
+  background-color: white;
   margin-top: 100px;
+  border-radius: 10px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  
 }
 
 

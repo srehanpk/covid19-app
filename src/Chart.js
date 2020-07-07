@@ -33,7 +33,9 @@ const Charts = () =>{
 const lineChart = (
     
     chartData[0] ? (
+        
         <Line 
+    
         data={{
             labels: chartData.map((date)=>date.reportDate),
             datasets:[{

@@ -8,7 +8,8 @@ import axios from 'axios';
 
 
     const [globalData, setGlobalData] = useState({});
-    const [dailyData, setDailyData] =  useState({})
+    const [dailyData, setDailyData] =  useState({});
+    const [countryData, setCountryData] =  useState({});
     
     useEffect(()=> {
       
@@ -18,15 +19,21 @@ import axios from 'axios';
     
         const {data: {confirmed, recovered, deaths}} = await axios.get(url);
         const data =  {confirmed:confirmed.value, recovered:recovered.value, deaths:deaths.value}
-        //console.log(data);
+        
         setGlobalData(data);
 
 
         const fetchApi = await axios.get(`${url}/daily`);
         const forCharts = await fetchApi.data;
+
         setDailyData(forCharts);
+
+
+        const api = await axios.get(`${url}/countries`);
+        const forCountry = await api.data;
        
-        //console.log(forCharts);
+        setCountryData(forCountry);
+        console.log(forCountry);
         
       }
            
@@ -35,7 +42,7 @@ import axios from 'axios';
     },[setGlobalData]);
 
 
-    return {globalData, dailyData};
+    return {globalData, dailyData, countryData};
         
 
   }
