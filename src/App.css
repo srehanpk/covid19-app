@@ -13,15 +13,17 @@ body {
   max-width: max-content;
   min-width: min-content;
   margin: auto;
+  
 }
 .header {
   
  
-  font-size:35px;
+  font-size:30px;
   color: aliceblue;
   text-shadow: black 2px 5px 1px ;
   letter-spacing: 4px;
   /* padding: 0px 20px 0px 20px ; */
+ 
 }
 
 .select {

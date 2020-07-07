@@ -69,7 +69,9 @@ card: {
 
 export default function Status() {
 
-  const {globalData}  = useContext(GlobalContext);
+  const {globalData, countryData}  = useContext(GlobalContext);
+  console.log(countryData);
+  
 
   
   
@@ -115,6 +117,7 @@ export default function Status() {
       <FormControl className={classes.formControl}>
         <NativeSelect>
           <option value="global">Global</option>
+          <option></option>
          
         </NativeSelect>
       </FormControl>

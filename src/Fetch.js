@@ -33,7 +33,7 @@ import axios from 'axios';
         const forCountry = await api.data;
        
         setCountryData(forCountry);
-        console.log(forCountry);
+        
         
       }
            
