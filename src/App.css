@@ -12,8 +12,11 @@ body {
   border-bottom: solid rgba(255, 4, 4, 0.911);
   max-width: max-content;
   min-width: min-content;
+  margin: auto;
 }
 .header {
+  
+ 
   font-size:35px;
   color: aliceblue;
   text-shadow: black 2px 5px 1px ;
@@ -29,6 +32,11 @@ body {
 .o {
   color: rgba(255, 4, 4, 0.911);
 
+}
+.chart {
+
+  background-color: aliceblue;
+  margin-top: 100px;
 }
 
 

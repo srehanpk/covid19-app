@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
 root: {
      flexGrow: 1, 
      marginTop: 100,
+     
     },
 
 paper: {
@@ -27,6 +28,8 @@ paper: {
     // padding: theme.spacing(2),
     //color: theme.palette.text.secondary,
     backgroundColor: "transparent",  
+    width: "max-content",
+    margin: "auto",
 },
 
 h4: {
@@ -111,7 +114,7 @@ export default function Status() {
   
 
   const classes = useStyles();
-
+ 
   return (
     <div className={classes.root}>
 
@@ -139,13 +142,13 @@ export default function Status() {
 
           <Paper className={classes.paper}>
 
-          <Card className={classes.card} style={{borderTop: "solid 20px orange"}}>
+          <Card className={classes.card} style={{borderTop: "solid 20px blue"}}>
           <CardContent>
-          <ReportIcon style={{color: "orange", fontSize: "30px"}}/>
-            <Typography className={classes.title} style={{color:"orange"}} color="textSecondary" gutterBottom>
+          <ReportIcon style={{color: "blue", fontSize: "30px"}}/>
+            <Typography className={classes.title} style={{color:"blue"}} color="textSecondary" gutterBottom>
               <b>Confirmed Cases</b>
             </Typography>
-            <Typography variant="h5" component="h2" style={{color:"orange", fontWeight: "bolder"}}>
+            <Typography variant="h5" component="h2" style={{color:"blue", fontWeight: "bolder"}}>
                
               <CountUp start={0} duration={5} separator="," end={Number(confirmed)} />
             </Typography>
