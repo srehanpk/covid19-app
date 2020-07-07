@@ -80,6 +80,7 @@ export default function Status() {
   //const [data, setData] = useState({});
   
   const [heading, setHeading] = useState("");
+  const [country, setCountry] = useState([]);
 
   const [confirmed, setConfirmed] = useState("");
   const [recovered, setRecovered] = useState("");
@@ -94,17 +95,18 @@ export default function Status() {
          let confirmed = await fetch.confirmed;
          let recovered = await fetch.recovered;
          let deaths    = await fetch.deaths;
-        
-
+         let countries = await countryData.countries;
+         
 
           setConfirmed(confirmed);
           setRecovered(recovered);
           setDeaths(deaths);
           setHeading("Global Status")
-          
+          setCountry(countries)
     }
     api();
     
+console.log(country);
 
   const classes = useStyles();
  
@@ -118,8 +120,7 @@ export default function Status() {
       <FormControl className={classes.formControl}>
         <NativeSelect>
           <option value="global">Global</option>
-          <option></option>
-         
+       {country? (country.map((names, i)=> <option key={i} value="country" >{names.name}</option>)) : "Loading..."}         
         </NativeSelect>
       </FormControl>
     </div>
