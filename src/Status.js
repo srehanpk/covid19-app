@@ -100,6 +100,7 @@ export default function Status() {
           setConfirmed(confirmed);
           setRecovered(recovered);
           setDeaths(deaths);
+          setHeading("Global Status")
           
     }
     api();
