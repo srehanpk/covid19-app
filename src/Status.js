@@ -139,14 +139,14 @@ export default function Status() {
               className={classes.card}
               style={{
                 border: "solid 1px black",
-                borderTop: "solid 20px blueviolet",
+                borderTop: "solid 20px blue",
               }}
             >
               <CardContent>
-                <ReportIcon style={{ color: "blueviolet", fontSize: "30px" }} />
+                <ReportIcon style={{ color: "blue", fontSize: "30px" }} />
                 <Typography
                   className={classes.title}
-                  style={{ color: "blueviolet" }}
+                  style={{ color: "blue" }}
                   color="textSecondary"
                   gutterBottom
                 >
@@ -155,7 +155,7 @@ export default function Status() {
                 <Typography
                   variant="h5"
                   component="h2"
-                  style={{ color: "blueviolet", fontWeight: "bolder" }}
+                  style={{ color: "blue", fontWeight: "bolder" }}
                 >
                   {newCountry === "" ? (
                     <CountUp
@@ -184,16 +184,16 @@ export default function Status() {
               className={classes.card}
               style={{
                 border: "solid 1px black",
-                borderTop: "solid 20px greenyellow",
+                borderTop: "solid 20px green",
               }}
             >
               <CardContent>
                 <HealingIcon
-                  style={{ color: "greenyellow", fontSize: "30px" }}
+                  style={{ color: "green", fontSize: "30px" }}
                 />
                 <Typography
                   className={classes.title}
-                  style={{ color: "greenyellow" }}
+                  style={{ color: "green" }}
                   color="textSecondary"
                   gutterBottom
                 >
@@ -202,7 +202,7 @@ export default function Status() {
                 <Typography
                   variant="h5"
                   component="h2"
-                  style={{ color: "greenyellow", fontWeight: "bolder" }}
+                  style={{ color: "green", fontWeight: "bolder" }}
                 >
                   {newCountry === "" ? (
                     <CountUp
@@ -231,14 +231,14 @@ export default function Status() {
               className={classes.card}
               style={{
                 border: "solid 1px black",
-                borderTop: "solid 20px crimson",
+                borderTop: "solid 20px red",
               }}
             >
               <CardContent>
-                <WarningIcon style={{ color: "crimson", fontSize: "30px" }} />
+                <WarningIcon style={{ color: "red", fontSize: "30px" }} />
                 <Typography
                   className={classes.title}
-                  style={{ color: "crimson" }}
+                  style={{ color: "red" }}
                   color="textSecondary"
                   gutterBottom
                 >
@@ -247,7 +247,7 @@ export default function Status() {
                 <Typography
                   variant="h5"
                   component="h2"
-                  style={{ color: "crimson", fontWeight: "bolder" }}
+                  style={{ color: "red", fontWeight: "bolder" }}
                 >
                   {newCountry === "" ? (
                     <CountUp

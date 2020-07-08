@@ -34,8 +34,8 @@ const Charts = () => {
         ],
         
       }}
-      width={50}
-      height={400}
+      width={100}
+      height={300}
       options={{ 
         
         maintainAspectRatio: false, 
@@ -49,8 +49,8 @@ const Charts = () => {
   ) : null;
 
   return (
-    <div className="charth2">
-      <h2>Daily Data</h2>
+    <div >
+      <h2 className="charth2">Daily Data</h2>
       <div className="chart">{lineChart}</div>
     </div>
   );
