@@ -10,15 +10,18 @@ import axios from 'axios';
     const [globalData, setGlobalData] = useState({});
     const [dailyData, setDailyData] =  useState({});
     const [countryData, setCountryData] =  useState({});
-    
+    const [list, setList] = useState([]);
+  
+
     useEffect(()=> {
       
       const url = `https://covid19.mathdro.id/api` ; 
-      
+      const url1 = `https://api.covid19api.com/summary` ; 
       async function covid ()  {
     
         const {data: {confirmed, recovered, deaths}} = await axios.get(url);
         const data =  {confirmed:confirmed.value, recovered:recovered.value, deaths:deaths.value}
+        
         
         setGlobalData(data);
 
@@ -29,20 +32,31 @@ import axios from 'axios';
         setDailyData(forCharts);
 
 
-        const api = await axios.get(`${url}/countries`);
+        const api = await axios.get(url1);
         const forCountry = await api.data;
+        
+        
+        
+        const forList    = await forCountry.Countries;
+        const list1 = await forList.map((name)=> name.Country);
+        
+        //console.log(list1);
+         
        
         setCountryData(forCountry);
-        
+        setList(list1);
+
         
       }
            
       covid();
       
-    },[setGlobalData]);
+    },[setGlobalData, setDailyData, setCountryData, setList]);
 
+console.log(list);
 
-    return {globalData, dailyData, countryData};
+  
+    return {globalData, dailyData, countryData, list};
         
 
   }

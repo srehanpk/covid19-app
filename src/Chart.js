@@ -50,6 +50,9 @@ const lineChart = (
                 borderColor: "red",
                 fill: true,
             }],
+            options: {
+            
+            }
 
         }}
         />) : null
@@ -58,8 +61,11 @@ const lineChart = (
 
     return (
 
+        <div className="charth2">
+        <h2>Daily Data</h2>
         <div className="chart">
         {lineChart}
+        </div>
         </div>
     )
 

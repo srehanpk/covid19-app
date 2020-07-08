@@ -13,13 +13,13 @@ import {Fetch} from './Fetch'
   export const GlobalProvider = ({ children }) => {
   
     
-      const {globalData, dailyData, countryData} =  Fetch();
+      const {globalData, dailyData, countryData, list} =  Fetch();
 
      
      
     return (
       <GlobalContext.Provider
-        value={{globalData, dailyData, countryData}}
+        value={{globalData, dailyData, countryData, list}}
       >
         {children}
       </GlobalContext.Provider>

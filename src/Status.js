@@ -25,7 +25,7 @@ paper: {
     justifyContent:"center",
     // padding: theme.spacing(2),
     //color: theme.palette.text.secondary,
-    backgroundColor: "transparent",  
+   // backgroundColor: "transparent",  
     width: "max-content",
     margin: "auto",
 },
@@ -41,11 +41,15 @@ h4: {
 // Cards CSS
 
 card: {
-    minWidth: 200,
-    // backgroundColor: "transparent",
+    minWidth: 250,
+    minHeight: 150,
+    backgroundColor: "transparent",
     textAlign: "center",
     justifyContent: "space-between",
-    boxShadow: "black 2px 5px 1px ", 
+    boxShadow: "black 2px 5px 1px ",
+     
+    
+
   },
  
   title: {
@@ -54,13 +58,17 @@ card: {
   formControl: {
     margin: theme.spacing(1),
     minWidth: 150,
-    backgroundColor: "aliceblue",
+    borderRadius: 5,
+    
+   
+    
   },
   h3: {
     color: "aliceblue",
     textShadow: "black 2px 5px 1px",
     letterSpacing: 4,
   },
+  
 }));
 
 
@@ -69,23 +77,24 @@ card: {
 
 export default function Status() {
 
-  const {globalData, countryData}  = useContext(GlobalContext);
-  console.log(countryData);
+  const {globalData, countryData, list}  = useContext(GlobalContext);
   
-
+  
   
   
   //const initState = "Loading.....";
   
-  //const [data, setData] = useState({});
+  const [nameList, setNameList] = useState([]);
   
-  const [heading, setHeading] = useState("");
+  const [heading, setHeading] = useState("Global Status");
   const [country, setCountry] = useState([]);
-
+  const [newCountry, setNewCountry] = useState("");
+  const [indexNum, setIndexNum] = useState("");
+  
   const [confirmed, setConfirmed] = useState("");
   const [recovered, setRecovered] = useState("");
   const [deaths, setDeaths] = useState("");
-
+  
   
 
   async function api (){
@@ -95,32 +104,60 @@ export default function Status() {
          let confirmed = await fetch.confirmed;
          let recovered = await fetch.recovered;
          let deaths    = await fetch.deaths;
-         let countries = await countryData.countries;
+         let countries = await countryData.Countries;
+         let countryList= await list;
+         //console.log(countryList);
          
+         
+         
+         setConfirmed(confirmed);
+         setRecovered(recovered);
+         setDeaths(deaths);
+         setCountry(countries);
+         setNameList(countryList);
 
-          setConfirmed(confirmed);
-          setRecovered(recovered);
-          setDeaths(deaths);
-          setHeading("Global Status")
-          setCountry(countries)
-    }
+
+
+        }
+
+        
     api();
+  
     
-console.log(country);
+    
+  
+  const changeCountry = async (e) =>{
+      const cname = await e.target.value;
+      console.log( cname);
+
+      const indexNo = nameList.indexOf(cname);
+      const change = country[indexNo];
+
+      console.log(change);
+      
+      // setConfirmed(change.TotalConfirmed);
+      // setRecovered(change.TotalRecovered);
+      // setDeaths(change.Totaldeaths);
+      setIndexNum(indexNo);
+      setNewCountry(cname);
+      setHeading(cname);
+      
+    }
+  
 
   const classes = useStyles();
  
   return (
     <div className={classes.root}>
 
-    <h4 className={classes.h4}>{ heading === "" ? "Global Status" : heading}</h4>
+    <h4 className={classes.h4}>{ heading === "Global Status" ? heading : `${heading} Status`}</h4>
     
     <div className="select">
       <h3 className={classes.h3}>Select Country</h3>
-      <FormControl className={classes.formControl}>
-        <NativeSelect>
-          <option value="global">Global</option>
-       {country? (country.map((names, i)=> <option key={i} value="country" >{names.name}</option>)) : "Loading..."}         
+      <FormControl className={classes.formControl}  >
+        <NativeSelect className="native" defaultValue="" onChange={changeCountry}>
+          <option className="native" >Global</option>
+       {nameList? (nameList.map((names, i)=> <option className="native" key={i} >{names}</option>)) : "Loading..."}         
         </NativeSelect>
       </FormControl>
     </div>
@@ -132,15 +169,17 @@ console.log(country);
 
           <Paper className={classes.paper}>
 
-          <Card className={classes.card} style={{borderTop: "solid 20px blue"}}>
+          <Card className={classes.card} style={{border:"solid 1px black", borderTop: "solid 20px blueviolet"}}>
           <CardContent>
-          <ReportIcon style={{color: "blue", fontSize: "30px"}}/>
-            <Typography className={classes.title} style={{color:"blue"}} color="textSecondary" gutterBottom>
+          <ReportIcon style={{color: "blueviolet", fontSize: "30px"}}/>
+            <Typography className={classes.title} style={{color:"blueviolet"}} color="textSecondary" gutterBottom>
               <b>Confirmed Cases</b>
             </Typography>
-            <Typography variant="h5" component="h2" style={{color:"blue", fontWeight: "bolder"}}>
-               
-              <CountUp start={0} duration={5} separator="," end={Number(confirmed)} />
+            <Typography variant="h5" component="h2" style={{color:"blueviolet", fontWeight: "bolder"}}>
+             
+            {newCountry=== ""? (<CountUp start={0} duration={4} separator="," end={Number(confirmed)} />) : 
+              (<CountUp start={0} duration={4} separator="," end={Number(country[indexNum].TotalConfirmed)} />)} 
+              
             </Typography>
           </CardContent>
         </Card>
@@ -154,15 +193,17 @@ console.log(country);
 
           <Paper className={classes.paper}>
 
-          <Card className={classes.card} style={{borderTop: "solid 20px green"}}>
+          <Card className={classes.card} style={{border:"solid 1px black", borderTop: "solid 20px greenyellow"}}>
       <CardContent>
-      <HealingIcon style={{color: "green", fontSize: "30px"}}/>
-        <Typography className={classes.title} style={{color:"green"}} color="textSecondary" gutterBottom>
+      <HealingIcon style={{color: "greenyellow", fontSize: "30px"}}/>
+        <Typography className={classes.title} style={{color:"greenyellow"}} color="textSecondary" gutterBottom>
           <b>Recovered Cases</b>
         </Typography>
-        <Typography variant="h5" component="h2" style={{color:"green", fontWeight: "bolder"}}>
+        <Typography variant="h5" component="h2" style={{color:"greenyellow", fontWeight: "bolder"}}>
         
-        <CountUp start={0} duration={4} separator="," end={Number(recovered)} />
+        {newCountry=== "" ? (<CountUp start={0} duration={3} separator="," end={Number(recovered)} />) : 
+        (<CountUp start={0} duration={3} separator="," end={Number(country[indexNum].TotalRecovered)} />)}
+        
         </Typography>
       </CardContent>
     </Card>
@@ -176,15 +217,17 @@ console.log(country);
 
           <Paper className={classes.paper}>
 
-          <Card className={classes.card} style={{borderTop: "solid 20px red"}}>
+          <Card className={classes.card} style={{border:"solid 1px black", borderTop: "solid 20px crimson"}}>
           <CardContent>
-          <WarningIcon style={{color: "red", fontSize: "30px"}}/>
-            <Typography className={classes.title} style={{color:"red"}} color="textSecondary" gutterBottom>
+          <WarningIcon style={{color: "crimson", fontSize: "30px"}}/>
+            <Typography className={classes.title} style={{color:"crimson"}} color="textSecondary" gutterBottom>
               <b>Total Deaths</b>
             </Typography>
-            <Typography variant="h5" component="h2" style={{color:"red", fontWeight: "bolder" }}>
-           
-            <CountUp start={0} duration={2} separator="," end={Number(deaths)} />
+            <Typography variant="h5" component="h2" style={{color:"crimson", fontWeight: "bolder" }}>
+            
+            {newCountry===""  ? (<CountUp start={0} duration={2} separator="," end={Number(deaths)} />) : 
+              (<CountUp start={0} duration={2} separator="," end={Number(country[indexNum].TotalDeaths)} />)}
+            
 
             </Typography>
           </CardContent>
