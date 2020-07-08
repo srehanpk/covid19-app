@@ -32,8 +32,19 @@ const Charts = () => {
             fill: true,
           },
         ],
-        options: {},
+        
       }}
+      width={50}
+      height={400}
+      options={{ 
+        
+        maintainAspectRatio: false, 
+      responsive: true, 
+      title: {text: "Covid-19",
+              display: true, 
+              fontSize:20, 
+              fontColor: "gray"
+              }  }}
     />
   ) : null;
 

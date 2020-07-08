@@ -133,7 +133,7 @@ export default function Status() {
       </div>
 
       <Grid container spacing={4} justify="center">
-        <Grid item xs={10} md={3}>
+        <Grid item  xs={10} md={3}>
           <Paper className={classes.paper}>
             <Card
               className={classes.card}
