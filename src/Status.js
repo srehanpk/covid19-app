@@ -132,8 +132,8 @@ export default function Status() {
       </div>
 
       <Grid container spacing={4} justify="center">
-        <Grid item  xs={10} md={3}>
-          <Paper className={classes.paper} >
+        <Grid item xs={10} md={3}>
+          <Paper className={classes.paper}>
             <Card
               className={classes.card}
               style={{
@@ -187,9 +187,7 @@ export default function Status() {
               }}
             >
               <CardContent>
-                <HealingIcon
-                  style={{ color: "green", fontSize: "30px" }}
-                />
+                <HealingIcon style={{ color: "green", fontSize: "30px" }} />
                 <Typography
                   className={classes.title}
                   style={{ color: "green" }}

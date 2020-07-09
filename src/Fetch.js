@@ -24,11 +24,13 @@ export const Fetch = () => {
 
       const fetchApi = await axios.get(`${url}/daily`);
       const forCharts = await fetchApi.data;
+     
 
       setDailyData(forCharts);
 
       const api = await axios.get(url1);
       const forCountry = await api.data;
+      
 
       const forList = await forCountry.Countries;
       const list1 = await forList.map((name) => name.Country);
