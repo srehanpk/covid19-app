@@ -49,7 +49,7 @@ const Charts = () => {
   ) : null;
 
   return (
-    <div >
+    <div  className="divider">
       <h2 className="charth2">Daily Data</h2>
       <div className="chart">{lineChart}</div>
     </div>

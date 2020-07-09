@@ -47,7 +47,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     boxShadow: "black 2px 5px 1px ",
   },
-
   title: {
     fontSize: 15,
   },
@@ -134,12 +133,12 @@ export default function Status() {
 
       <Grid container spacing={4} justify="center">
         <Grid item  xs={10} md={3}>
-          <Paper className={classes.paper}>
+          <Paper className={classes.paper} >
             <Card
               className={classes.card}
               style={{
                 border: "solid 1px black",
-                borderTop: "solid 20px blue",
+                borderTop: "solid 20px blue ",
               }}
             >
               <CardContent>
