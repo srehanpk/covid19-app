@@ -67,7 +67,7 @@ export default function Status() {
 
   const [nameList, setNameList] = useState([]);
 
-  const [heading, setHeading] = useState("Global Status");
+  const [heading, setHeading] = useState("Global");
   const [country, setCountry] = useState([]);
   const [newCountry, setNewCountry] = useState("");
   const [indexNum, setIndexNum] = useState("");
@@ -109,7 +109,7 @@ export default function Status() {
   return (
     <div className={classes.root}>
       <h4 className={classes.h4}>
-        {heading === "Global Status" ? heading : `${heading} Status`}
+        {heading === "Global" ? heading : `${heading} `}
       </h4>
 
       <div className="select">
