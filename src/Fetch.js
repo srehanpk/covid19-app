@@ -14,23 +14,25 @@ export const Fetch = () => {
       const {
         data: { confirmed, recovered, deaths },
       } = await axios.get(url);
+
       const data = {
         confirmed: confirmed.value,
         recovered: recovered.value,
         deaths: deaths.value,
       };
 
+
       setGlobalData(data);
 
       const fetchApi = await axios.get(`${url}/daily`);
       const forCharts = await fetchApi.data;
-     
+
 
       setDailyData(forCharts);
 
       const api = await axios.get(url1);
       const forCountry = await api.data;
-      
+
 
       const forList = await forCountry.Countries;
       const list1 = await forList.map((name) => name.Country);

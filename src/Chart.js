@@ -32,24 +32,26 @@ const Charts = () => {
             fill: true,
           },
         ],
-        
+
       }}
       width={100}
       height={300}
-      options={{ 
-        
-        maintainAspectRatio: false, 
-      responsive: true, 
-      title: {text: "Covid-19",
-              display: true, 
-              fontSize:20, 
-              fontColor: "gray"
-              }  }}
+      options={{
+
+        maintainAspectRatio: false,
+        responsive: true,
+        title: {
+          text: "Covid-19",
+          display: true,
+          fontSize: 20,
+          fontColor: "gray"
+        }
+      }}
     />
   ) : null;
 
   return (
-    <div  className="divider">
+    <div className="divider">
       <h2 className="charth2">Daily Data</h2>
       <div className="chart">{lineChart}</div>
     </div>

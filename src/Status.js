@@ -1,13 +1,7 @@
 import React, { useContext, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
-import {
-  Grid,
-  Card,
-  CardContent,
-  Typography,
-  NativeSelect,
-} from "@material-ui/core";
+import {Grid,Card,CardContent,Typography,NativeSelect,} from "@material-ui/core";
 import ReportIcon from "@material-ui/icons/Report";
 import HealingIcon from "@material-ui/icons/Healing";
 import WarningIcon from "@material-ui/icons/Warning";
@@ -98,7 +92,8 @@ export default function Status() {
     const cname = await e.target.value;
 
     const indexNo = nameList.indexOf(cname);
-
+     
+      
     setIndexNum(indexNo);
     setNewCountry(cname);
     setHeading(cname);
