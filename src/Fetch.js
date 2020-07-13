@@ -32,16 +32,18 @@ export const Fetch = () => {
 
       const api = await axios.get(url1);
       const forCountry = await api.data;
-
-
+      
+      
+      
       const forList = await forCountry.Countries;
       const list1 = await forList.map((name) => name.Country);
-
+      
       setCountryData(forCountry);
       setList(list1);
     }
 
     covid();
+    
   }, [setGlobalData, setDailyData, setCountryData, setList]);
 
   return { globalData, dailyData, countryData, list };

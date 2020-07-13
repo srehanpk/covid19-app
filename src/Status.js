@@ -87,6 +87,7 @@ export default function Status() {
   }
 
   api();
+// console.log(list);
 
   const changeCountry = async (e) => {
     const cname = await e.target.value;
